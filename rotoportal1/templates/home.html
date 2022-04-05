@@ -1,0 +1,62 @@
+{% extends 'pokenet.html' %}
+{% block main %}
+<div class="threads">
+    <span class="box-title">記事まとめ</span>
+    <p><a href= "/rankings/s2.html">シーズン6上位記事</a></p>
+    <p><a href= "/rankings/s2.html">シーズン5上位記事</a></p>
+    <p><a href= "/rankings/s2.html">シーズン4上位記事</a></p>
+    <p><a href= "/rankings/s2.html">シーズン3上位記事</a></p>
+    <p><a href= "/rankings/s2.html">シーズン2上位記事</a></p>
+    <p><a href= "/rankings/s2.html">シーズン1上位記事</a></p>
+
+    <span class="box-title">その他記事</span>
+    <p><a href= "/rankings/s2.html">大会まとめ</a></p>
+    <p><a href= "/rankings/s2.html">コラム</a></p>
+    <p><a href= "/rankings/s2.html">シーズン4上位記事</a></p>
+    <p><a href= "/rankings/s2.html">シーズン3上位記事</a></p>
+    <p><a href= "/rankings/s2.html">シーズン2上位記事</a></p>
+    <p><a href= "/rankings/s2.html">シーズン1上位記事</a></p>
+</div>
+
+<div class="rankings">
+    前シーズンシングルレートTop10
+{% for topdata in toppartydata %}
+<table border="1">
+    <tr>
+    <td>{{topdata.rank}}位</td>
+    <td>{{topdata.username}}</td>
+    
+        <td><img src="{{topdata.pkmn1.img.url}}" class="topicons"></td>
+        <td><img src="{{topdata.item1.img.url}}" class="topicons"></td>
+        <td><img src="{{topdata.pkmn2.img.url}}" class="topicons"></td>
+        <td><img src="{{topdata.item2.img.url}}" class="topicons"></td>
+        <td><img src="{{topdata.pkmn3.img.url}}" class="topicons"></td>
+        <td><img src="{{topdata.item3.img.url}}" class="topicons"></td>
+        <td><img src="{{topdata.pkmn4.img.url}}" class="topicons"></td>
+        <td><img src="{{topdata.item4.img.url}}" class="topicons" ></td>
+        <td><img src="{{topdata.pkmn5.img.url}}" class="topicons"></td>
+        <td><img src="{{topdata.item5.img.url}}" class="topicons"></td>
+        <td><img src="{{topdata.pkmn6.img.url}}" class="topicons"></td>
+        <td><img src="{{topdata.item6.img.url}}" class="topicons"></td>
+        <td><a href="{{topdata.url}}">記事リンク</a></td>
+    </tr>
+    </table>
+{% endfor %}
+{% for data in partydata %}
+<table border="1">
+    <tr>
+    <td>{{data.rank}}位</td>
+    <td>{{data.username}}</td>
+        <td><img src="{{data.pkmn1.img.url}}" class="icons"></td>
+        <td><img src="{{data.pkmn2.img.url}}" class="icons"></td>
+        <td><img src="{{data.pkmn3.img.url}}" class="icons"></td>
+        <td><img src="{{data.pkmn4.img.url}}" class="icons"></td>
+        <td><img src="{{data.pkmn5.img.url}}" class="icons"></td>
+        <td><img src="{{data.pkmn6.img.url}}" class="icons"></td>
+        <td><a href="{{data.url}}">記事リンク</a></td>
+    </tr>
+    </table>
+{% endfor %}
+
+</div>
+{% endblock %}

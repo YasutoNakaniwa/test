@@ -1,0 +1,204 @@
+body{
+
+    font-family: 'ヒラギノ丸ゴシック', sans-serif;
+    background-color: #171717;
+    color: #171717
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: #171717;
+  }
+
+header{
+    width: 100%;
+    height: 50px; 
+    text-align: left;
+    padding: 60px 0;
+    border-bottom: #ffb03f solid 3px;
+  
+}
+
+.header-content{
+    width:100%;
+}
+form{
+    display: inline;
+}
+.textbox{
+    width:8em
+}
+.notder{
+    display: flex;
+}
+
+.sidebar{
+    background-color: #ffb03f;
+    height: 300px;
+    text-align: center;
+    margin: 3vw;
+
+}
+.content{
+    background-color:#FDA172;
+    width:80vw;
+    height:100%;
+    text-align:center;
+    margin:3vw;
+    background-size: auto;
+    border-radius: 5px;
+ 
+}
+.threads{
+    float:left;
+    width:30%;
+}
+
+
+.title{
+    width:50px;
+
+    margin: 3em;
+    
+    background-color: #ffb03f;
+}
+#siteicon{
+    width: 50px;
+    height:50px;
+}
+#sitelogo{
+    width: 50px;
+    height:50px;
+
+}
+/* 検索ペーじ*/
+.card{
+    background-color: #a4d46c;
+    border-radius: 10px;
+    float: left;
+    margin: 5%;
+}
+#container{
+    display: grid;
+    grid-template-rows: 1fr, 75px, 75px, 75px, 75px, 75px, 75px, 75px, 75px, 75px;
+    grid-template-columns: 40px,10px,40px,10px;
+}
+#articledata{
+    grid-row: 1;
+    grid-column: 1/4;
+    margin: 0 auto;
+    word-break: break-word;
+    text-align: center;
+}
+#pkmn1{
+    grid-row: 2/3;
+    grid-column: 1;
+}
+#pkmn2{
+    grid-row: 2/3;
+    grid-column: 3;
+}
+#pkmn3{
+    grid-row: 5/6;
+    grid-column: 1;
+}
+#pkmn4{
+    grid-row: 5/6;
+    grid-column: 3;
+}
+#pkmn5{
+    grid-row: 8/9;
+    grid-column: 1;
+}
+#pkmn6{
+    grid-row: 8/9;
+    grid-column: 3;
+}
+#item1{
+    grid-row: 3;
+    grid-column: 2;
+}
+#item2{
+    grid-row: 3;
+    grid-column: 4;
+}
+#item3{
+    grid-row: 5;
+    grid-column: 2;
+}
+#item4{
+    grid-row: 5;
+    grid-column: 4;
+}
+#item5{
+    grid-row: 9;
+    grid-column: 2;
+}
+#item6{
+    grid-row: 9;
+    grid-column: 4;
+}
+#tag1{
+    grid-row: 4;
+    grid-column: 1/2;
+    font-size: small;
+}
+#tag2{
+    grid-row: 4;
+    grid-column: 3/4;
+    font-size: small;
+}
+#tag3{
+    grid-row: 7;
+    grid-column: 1/2;
+    font-size: small;
+}
+#tag4{
+    grid-row: 7;
+    grid-column: 3/4;
+    font-size: small;
+}
+#tag5{
+    grid-row: 10;
+    grid-column: 1/2;
+    font-size: small;
+}
+#tag6{
+    grid-row: 10;
+    grid-column: 3/4;
+    font-size: small;
+}
+
+/*画像設定*/
+.topicons{
+    width: 50px;
+    height:50px;
+}
+.icons{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+.itemicons{
+    width: 30px;
+    height: 30px;
+}
+
+.bigicons{
+    width: 100px;
+    height: 100px;
+}
+footer{
+
+    width: 100%;
+    height: 10px; 
+    text-align: center;
+    padding: 50px 0;
+    background-color:#ffb03f; 
+    position:absolute;
+    bottom: 0;
+}
+
+/* 検索ページ */
+.mult{
+    font-size: smaller;
+}

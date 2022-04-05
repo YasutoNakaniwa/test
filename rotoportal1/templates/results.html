@@ -1,0 +1,81 @@
+{% extends 'pokenet.html'%}
+
+{% block main %}
+    {% for party in object_list %}
+    {{party.username}}
+    {% endfor %}
+<form action="{% url 'results' %}"method="get">
+    <input type = "text" value="{{ request.GET.pkmnq }}" name = "pkmnq" placeholder="ポケモン名" class="textbox">@
+    <input type = "text" value="{{ request.GET.itemq }}" name = "itemq" placeholder="もちもの名" class="textbox">
+    <input type = "text" value="{{ request.GET.tagq }}" name = "tagq" placeholder="わざタグ" class="textbox"><br>
+    <div class="mult">
+    <input type = "radio" value="single" name = "ruleq" id="single">シングル
+    <input type = "radio" value="double" name = "ruleq" id="double">ダブル
+    <input type = "radio" value="100" name = "rankq" id="100">Top100
+    <input type = "radio" value="1000" name = "rankq" id="1000">Top1000
+    <input type = "radio" value="SwSh" name = "gameq" id="SwSh">剣盾
+    <input type = "radio" value="SV" name = "gameq" id="SV">SV
+    <input type = "number" value="season_start" name="seasonstartq" id="season_start" placeholder="このシーズンから">〜
+    <input type = "number" value="season_end" name="seasonendq" id="season_end" placeholder="このシーズンまで">
+    </div>
+
+    <button>検索</button>
+</form>
+
+<br>
+
+<br>
+
+{% for data in partydata %}
+<div class="card" id="container">
+    <div id="articledata">
+    {{data.username}}
+    {{data.twitterid}}
+    
+    {{data.rank}}位
+
+    <p>
+    <a href="{{data.url}}" id="articletitle">{{data.articletitle}}</a>
+    </p>
+    <p>
+        {{data.rule}}
+        {{data.game}}
+        シーズン：{{data.season}}
+        レート：{{data.rating}}
+    </p>
+    </div>
+    
+    
+    <img src="{{data.pkmn1.img.url}}" class="icons" id="pkmn1">
+    <img src="{{data.item1.img.url}}" class="itemicons" id="item1">
+    
+    <img src="{{data.pkmn2.img.url}}" class="icons" id="pkmn2">
+    <img src="{{data.item2.img.url}}" class="itemicons" id="item2">
+    
+    <img src="{{data.pkmn3.img.url}}" class="icons" id="pkmn3">
+    <img src="{{data.item3.img.url}}" class="itemicons" id="item3">
+
+    <img src="{{data.pkmn4.img.url}}" class="icons" id="pkmn4">
+    <img src="{{data.item4.img.url}}" class="itemicons" id="item4">
+
+    <img src="{{data.pkmn5.img.url}}" class="icons" id="pkmn5">
+    <img src="{{data.item5.img.url}}" class="itemicons" id="item5">
+  
+    <img src="{{data.pkmn6.img.url}}" class="icons" id="pkmn6">
+    <img src="{{data.item6.img.url}}" class="itemicons" id="item6">
+  
+    
+    <div id="tag1">{{data.tag1.name}}</div>
+    <div id="tag2">{{data.tag2.name}}</div>
+    <div id="tag3">{{data.tag3.name}}</div>
+    <div id="tag4">{{data.tag4.name}}</div>
+    <div id="tag5">{{data.tag5.name}}</div>
+    <div id="tag6">{{data.tag6.name}}</div>
+    
+       
+
+</div>
+{% endfor %}
+
+
+{% endblock %}

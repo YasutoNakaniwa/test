@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html><!-- このファイルはHTMLですという宣言 -->
+<html><!-- ここからHTMLが始まりますというタグ -->
+<head><!-- ここから裏の設定ですよという宣言 -->
+	<meta charset="utf-8"><!-- 文字化け防止の記述 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- ややこしいので無視してOK -->
+	
+    <title>ぽけねっと</title><!-- ページのタイトルを入れます -->
+
+    <meta name="author" content="yuriapoke">
+    <meta name="description" content="「ぽけねっと」では、ポケモンの構築記事リンクや記事検索、記事を書く際に役立つ情報の提供を行います。">
+    <meta name="keywords" content="ぽけねっと,ポケネット,ぽけネット,まとめ,構築記事,構築記事リンク,ポケモンブログ">
+ <!-- Twitter対応 -->
+ <meta name="twitter:card" content="summary">
+ <meta name="twitter:site" content="@yuriapoke">
+ <meta name="twitter:image:src" content="https://nouthuca.com/img/twitter_logo.png">
+ <!-- facebook  -->
+ <meta property="og:title" content="ぽけっとふぁんくしょん！">
+ <meta property="og:description" content="ポケモンの構築記事リンクや記事検索を行うことができるウェブサイト">
+
+<link rel="icon" href="img/sitedesign/favicon.ico">
+<!-- BootStrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<link rel="stylesheet" href="{% static 'rotoportal1/styles.css' %}">
+</head><!-- ここまでがうらの設定ですよという宣言 -->
+
+<body class=><!-- ここからページに表示される内容ですよという宣言 -->
+<header class="site-header">
+    <div class="header-content">
+        <a href="{% url 'homepage' %}" class= "title"><img src="{% static 'rotoportal1/rotoicon.jpg' %}" id="siteicon"></a>
+	    <a href="{% url 'homepage' %}" class= "title"><img src="{% static 'rotoportal1/rotologo.png' %}" id="sitelogo"></a> 
+        <form action="{% url 'results' %}"method="get">
+            <input type = "text" value="{{ request.GET.pkmnq }}" name = "pkmnq" placeholder="ポケモン" class="textbox">@
+            <input type = "text" value="{{ request.GET.itemq }}" name = "itemq" placeholder="もちもの" class="textbox">
+            <input type = "text" value="{{ request.GET.tagq }}" name = "tagq" placeholder="わざタグ" class="textbox">
+            <button>検索</button>
+
+        </form>
+    </div>
+</header>
+
+<div class="notder">
+<div class="sidebar">
+<p><a href="{% url 'howto' %}" class="subtitle">このサイトの使い方</a></p>
+<p><a href="{% url 'results' %}" class="subtitle">検索</a></p>
+<p><a href="{% url 'rankgeneral' %}" class="subtitle">TOP100</a></p>
+<p><a href="{% url 'form' %}" class="subtitle">投稿フォーム</a></p>
+<p><a href="{% url 'privacy' %}" class="subtitle">プライバシーポリシー</a></p>
+</div>
+<div class="content">
+{% block main %}
+{% endblock %}
+</div>
+
+</div>
+
+<footer>
+<a href="https://twitter.com/yuriapoke">連絡先</a>
+</footer>
+
+
+
+</body><!-- ここまでがページに表示される内容ですよという宣言 -->
+</html><!-- ここまでがHTMLですという終わりの宣言 -->

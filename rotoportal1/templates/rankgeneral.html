@@ -1,0 +1,41 @@
+{% extends 'pokenet.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'rotoportal1/static/rotoportal1/styles.css' %}">
+{% block main %}
+<h1>TOP100</h1>
+どのシーズンのTOP100を見ますか
+<form action="{% url 'rankgeneral' %}"method="get">
+    <input type = "checkbox" value="SwSh" name = "gameq" id="SwSh">剣盾
+    <input type = "checkbox" value="SV" name = "gameq" id="SV">SV
+    <input type = "number" value="seasonselect" name="seasonselect" id="seasonselect">シーズンを入力
+    <button>検索</button>
+</form>
+
+
+{% for data in partydata %}
+<div border="1">
+<p>{{data.username}}
+{{data.twitterid}}
+<a href="{{data.url}}">{{data.articletitle}}</a>
+{{data.rank}}位</p>
+<p>
+    <img src="{{data.pkmn1.bigimg.url}}" class="bigicons">
+    <img src="{{data.item1.img.url}}">
+    <img src="{{data.pkmn2.bigimg.url}}" class="bigicons">
+    <img src="{{data.item2.img.url}}">
+    <img src="{{data.pkmn3.bigimg.url}}" class="bigicons">
+    <img src="{{data.item3.img.url}}">
+    <img src="{{data.pkmn4.bigimg.url}}" class="bigicons">
+    <img src="{{data.item4.img.url}}">
+    <img src="{{data.pkmn5.bigimg.url}}" class="bigicons">
+    <img src="{{data.item5.img.url}}">
+    <img src="{{data.pkmn6.bigimg.url}}"  class="bigicons">
+    <img src="{{data.item6.img.url}}">
+</p>
+<p>{{data.game}}</p>
+<p>S{{data.season}}</p>
+<p>最終レート{{data.rating}}</p>
+
+
+{% endfor %}
+{% endblock %}

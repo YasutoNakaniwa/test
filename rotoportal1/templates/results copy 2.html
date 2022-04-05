@@ -1,0 +1,100 @@
+<!DOCTYPE html><!-- このファイルはHTMLですという宣言 -->
+<html><!-- ここからHTMLが始まりますというタグ -->
+<head><!-- ここから裏の設定ですよという宣言 -->
+	<meta charset="utf-8"><!-- 文字化け防止の記述 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- ややこしいので無視してOK -->
+	
+    <title>ぽけねっと</title><!-- ページのタイトルを入れます -->
+
+    <meta name="author" content="yuriapoke">
+    <meta name="description" content="「ぽけねっと」では、ポケモンの構築記事リンクや記事検索、記事を書く際に役立つ情報の提供を行います。">
+    <meta name="keywords" content="ぽけねっと,ポケネット,ぽけネット,まとめ,構築記事,構築記事リンク,ポケモンブログ">
+<!-- サイト内ソース -->
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="img/sitedesign/favicon.ico">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+</head><!-- ここまでがうらの設定ですよという宣言 -->
+<body><!-- ここからページに表示される内容ですよという宣言 -->
+  <header class="site-header">
+    <ul>
+	<a href="pokenet.html" class= "title">ぽけねっと</a> <img src="pkmn/bronzor.png">
+    <form action="cgi-bin/example.cgi" method="post">
+        
+        <input type="text" name="text" placeholder="ポケモン名">
+        <input type="text" name="text" placeholder="アイテム">
+        <input type="text" name="text" placeholder="タグ">
+        <input type="submit" name="submit" value="検索">
+      </form>
+    </ul>
+</header>
+<div class="box2">
+    <p>
+<a href="results.html" class="subtitle">検索</a>
+<a href="rankings/rankgeneral.html" class="subtitle">各シーズンランキング</a>
+<a href="form.html" class="subtitle">投稿フォーム</a>
+</p>
+</div>
+
+
+<form>
+  <div class="search-box">
+      <span class="search-box_label">ルール:</span>
+      <input type="radio" name="rule" value="">ALL
+      <input type="radio" name="rule" value="single">シングル
+      <input type="radio" name="rule" value="double">ダブル
+  </div>
+
+  <div class="search-box">
+      <span class="search-box_label">シーズン:</span>
+      <input type="radio" name="season" value="">ALL
+      <input type="radio" name="season" value="sixteen">16
+      <input type="radio" name="season" value="seventeen">17
+  </div>
+</form>
+
+<ul class="result">
+<li class="party" 
+pkmn="kangaskhan gengar garchomp blaziken suicune thundurus" 
+item="megastone focus-sash megastone life-orb chesto sitrus" 
+tag="rest destiny-bond hiddenpower-ice"
+data-season="sixteen"
+data-rule="single"
+data-rank="132">
+ユリア @yuriapoke S16 132位 <a href="https://acepoke.hatenadiary.com/archive">1サイクル目は安定行動</a><br>
+<img src="pkmn/kangaskhan.png"><img src= "item/damp-rock.png">
+<img src="pkmn/garchomp.png"><img src= "item/focus-sash.png">
+<img src="pkmn/gengar.png"><img src= "item/icy-rock.png">
+<img src="pkmn/blaziken.png"><img src= "item/life-orb.png">
+<img src="pkmn/thundurus.png"><img src= "item/sitrus.png">
+<img src="pkmn/suicune.png"><img src= "item/chesto.png">
+</li>
+
+<li class="party" 
+pkmn="hippowdon salamence aegislash tapu-koko greninja kartana" 
+item="sitrus heat-rock leftovers cell-battery focus-sash choice-scarf" 
+tag="rest destiny-bond hiddenpower-ice"
+data-season="seventeen"
+data-rule="single"
+data-rank="12">
+りー @rerisan_poke S17 12位 <a href="https://risan3336.hatenadiary.jp/">ポケットモンスターはメリープの夢を見るか？</a><br>
+<img src="pkmn/hippowdon.png"><img src= "item/sitrus.png">
+<img src="pkmn/salamence.png"><img src= "item/heat-rock.png">
+<img src="pkmn/aegislash.png"><img src= "item/leftovers.png">
+<img src="pkmn/tapu-koko.png"><img src= "item/cell-battery.png">
+<img src="pkmn/greninja.png"><img src= "item/focus-sash.png">
+<img src="pkmn/kartana.png"><img src= "item/choice-scarf.png">
+</li>
+
+</ul>
+
+
+
+
+
+
+<script src="js/search.js"></script>
+</body><!-- ここまでがページに表示される内容ですよという宣言 -->
+</html><!-- ここまでがHTMLですという終わりの宣言 -->
